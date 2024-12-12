@@ -27,7 +27,7 @@ class _LeaveRequestScreenState extends State<LeaveRequestScreen> {
   DateTime _startDate = DateTime.now();
   DateTime _endDate = DateTime.now();
   final TextEditingController _reasonController = TextEditingController();
-  List<String> _attachments = [];
+  final List<String> _attachments = [];
   bool _isLoading = false;
   LeaveBalance? _leaveBalance;
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../widgets/report_card.dart';
-import '../models/report_data.dart';
 import '../models/attendance.dart';
 import '../models/leave_request.dart';
 import '../services/attendance_service.dart';

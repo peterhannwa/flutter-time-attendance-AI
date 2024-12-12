@@ -160,9 +160,7 @@ class LeaveService extends ChangeNotifier {
     final year = DateTime.now().year;
     var balance = await getEmployeeLeaveBalance(employeeId, year);
     
-    if (balance == null) {
-      // Create new balance if doesn't exist
-      balance = LeaveBalance(
+    balance ??= LeaveBalance(
         employeeId: employeeId,
         year: year,
         quotas: {
@@ -174,7 +172,6 @@ class LeaveService extends ChangeNotifier {
           ),
         },
       );
-    }
 
     final quota = balance.quotas[leaveType.toString()] ?? LeaveQuota(
       total: 0,

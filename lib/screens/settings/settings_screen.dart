@@ -62,9 +62,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       margin: const EdgeInsets.all(16.0),
       child: Column(
         children: [
-          ListTile(
-            title: const Text('Appearance'),
-            leading: const Icon(Icons.palette),
+          const ListTile(
+            title: Text('Appearance'),
+            leading: Icon(Icons.palette),
           ),
           SwitchListTile(
             title: const Text('Dark Mode'),
@@ -96,9 +96,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       margin: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         children: [
-          ListTile(
-            title: const Text('Security'),
-            leading: const Icon(Icons.security),
+          const ListTile(
+            title: Text('Security'),
+            leading: Icon(Icons.security),
           ),
           SwitchListTile(
             title: const Text('Biometric Authentication'),
@@ -129,9 +129,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       margin: const EdgeInsets.all(16.0),
       child: Column(
         children: [
-          ListTile(
-            title: const Text('Notifications'),
-            leading: const Icon(Icons.notifications),
+          const ListTile(
+            title: Text('Notifications'),
+            leading: Icon(Icons.notifications),
           ),
           SwitchListTile(
             title: const Text('Push Notifications'),
@@ -163,9 +163,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       margin: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
         children: [
-          ListTile(
-            title: const Text('Language'),
-            leading: const Icon(Icons.language),
+          const ListTile(
+            title: Text('Language'),
+            leading: Icon(Icons.language),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -201,9 +201,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       margin: const EdgeInsets.all(16.0),
       child: Column(
         children: [
-          ListTile(
-            title: const Text('Data & Storage'),
-            leading: const Icon(Icons.storage),
+          const ListTile(
+            title: Text('Data & Storage'),
+            leading: Icon(Icons.storage),
           ),
           ListTile(
             title: const Text('Clear Cache'),

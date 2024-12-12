@@ -94,17 +94,17 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const Divider(indent: 16, endIndent: 16),
-          NavigationDrawerDestination(
-            icon: const Icon(Icons.calendar_today),
-            label: const Text('Calendar'),
+          const NavigationDrawerDestination(
+            icon: Icon(Icons.calendar_today),
+            label: Text('Calendar'),
           ),
-          NavigationDrawerDestination(
-            icon: const Icon(Icons.event_busy),
-            label: const Text('Leave Requests'),
+          const NavigationDrawerDestination(
+            icon: Icon(Icons.event_busy),
+            label: Text('Leave Requests'),
           ),
-          NavigationDrawerDestination(
-            icon: const Icon(Icons.person),
-            label: const Text('Profile'),
+          const NavigationDrawerDestination(
+            icon: Icon(Icons.person),
+            label: Text('Profile'),
           ),
           const Divider(indent: 16, endIndent: 16),
           Padding(

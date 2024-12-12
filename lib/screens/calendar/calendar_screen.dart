@@ -19,7 +19,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
-  Map<DateTime, List<CalendarEvent>> _events = {};
+  final Map<DateTime, List<CalendarEvent>> _events = {};
   List<CalendarEvent> _selectedEvents = [];
   bool _isLoading = false;
 
@@ -36,7 +36,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
       final startOfMonth = DateTime(today.year, today.month, 1);
       final endOfMonth = DateTime(today.year, today.month + 1, 0);
 
-      for (var day = startOfMonth; day.isBefore(endOfMonth); day = day.add(Duration(days: 1))) {
+      for (var day = startOfMonth; day.isBefore(endOfMonth); day = day.add(const Duration(days: 1))) {
         final events = await _calendarService.getEventsForDay(day);
         if (events.isNotEmpty) {
           setState(() {

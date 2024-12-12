@@ -84,10 +84,10 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           const Divider(),
-          ListTile(
-            leading: const Icon(Icons.calendar_today),
-            title: const Text('Join Date'),
-            subtitle: const Text('January 1, 2024'),
+          const ListTile(
+            leading: Icon(Icons.calendar_today),
+            title: Text('Join Date'),
+            subtitle: Text('January 1, 2024'),
           ),
           const Divider(),
           ListTile(
