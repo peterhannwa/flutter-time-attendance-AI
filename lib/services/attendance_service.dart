@@ -16,7 +16,7 @@ class AttendanceService extends ChangeNotifier {
         date: date,
         checkIn: DateTime(date.year, date.month, date.day, 9, 0),
         checkOut: index < 8 ? DateTime(date.year, date.month, date.day, 18, 0) : null,
-        isPresent: index < 8,
+        status: index < 8 ? AttendanceStatus.present : AttendanceStatus.absent,
       ),
     );
   }

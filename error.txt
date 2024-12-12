@@ -1,23 +1,4 @@
 [{
-	"resource": "/C:/learn/flutter/flutter_application_2_test_ui/lib/screens/calendar/calendar_screen.dart",
-	"owner": "_generated_diagnostic_collection_name_#2",
-	"code": {
-		"value": "argument_type_not_assignable",
-		"target": {
-			"$mid": 1,
-			"path": "/diagnostics/argument_type_not_assignable",
-			"scheme": "https",
-			"authority": "dart.dev"
-		}
-	},
-	"severity": 8,
-	"message": "The argument type 'Future<List<dynamic>> Function(DateTime)' can't be assigned to the parameter type 'List<CalendarEvent> Function(DateTime)?'. ",
-	"source": "dart",
-	"startLineNumber": 115,
-	"startColumn": 26,
-	"endLineNumber": 122,
-	"endColumn": 14
-},{
 	"resource": "/C:/learn/flutter/flutter_application_2_test_ui/lib/screens/settings/settings_screen.dart",
 	"owner": "_generated_diagnostic_collection_name_#2",
 	"code": {
@@ -40,40 +21,40 @@
 	"resource": "/C:/learn/flutter/flutter_application_2_test_ui/lib/screens/settings/settings_screen.dart",
 	"owner": "_generated_diagnostic_collection_name_#2",
 	"code": {
-		"value": "undefined_method",
+		"value": "invocation_of_non_function_expression",
 		"target": {
 			"$mid": 1,
-			"path": "/diagnostics/undefined_method",
+			"path": "/diagnostics/invocation_of_non_function_expression",
 			"scheme": "https",
 			"authority": "dart.dev"
 		}
 	},
 	"severity": 8,
-	"message": "The method 'isBiometricsEnabled' isn't defined for the type 'SettingsService'.\nTry correcting the name to the name of an existing method, or defining a method named 'isBiometricsEnabled'.",
+	"message": "The expression doesn't evaluate to a function, so it can't be invoked.",
 	"source": "dart",
 	"startLineNumber": 35,
-	"startColumn": 43,
+	"startColumn": 34,
 	"endLineNumber": 35,
-	"endColumn": 62
+	"endColumn": 56
 },{
 	"resource": "/C:/learn/flutter/flutter_application_2_test_ui/lib/screens/settings/settings_screen.dart",
 	"owner": "_generated_diagnostic_collection_name_#2",
 	"code": {
-		"value": "undefined_method",
+		"value": "invocation_of_non_function_expression",
 		"target": {
 			"$mid": 1,
-			"path": "/diagnostics/undefined_method",
+			"path": "/diagnostics/invocation_of_non_function_expression",
 			"scheme": "https",
 			"authority": "dart.dev"
 		}
 	},
 	"severity": 8,
-	"message": "The method 'areNotificationsEnabled' isn't defined for the type 'SettingsService'.\nTry correcting the name to the name of an existing method, or defining a method named 'areNotificationsEnabled'.",
+	"message": "The expression doesn't evaluate to a function, so it can't be invoked.",
 	"source": "dart",
 	"startLineNumber": 36,
-	"startColumn": 47,
+	"startColumn": 38,
 	"endLineNumber": 36,
-	"endColumn": 70
+	"endColumn": 67
 },{
 	"resource": "/C:/learn/flutter/flutter_application_2_test_ui/lib/screens/settings/settings_screen.dart",
 	"owner": "_generated_diagnostic_collection_name_#2",
@@ -87,29 +68,10 @@
 		}
 	},
 	"severity": 8,
-	"message": "The method 'setBiometricsEnabled' isn't defined for the type 'SettingsService'.\nTry correcting the name to the name of an existing method, or defining a method named 'setBiometricsEnabled'.",
+	"message": "The method 'NotificationService' isn't defined for the type '_SettingsScreenState'.\nTry correcting the name to the name of an existing method, or defining a method named 'NotificationService'.",
 	"source": "dart",
-	"startLineNumber": 108,
-	"startColumn": 39,
-	"endLineNumber": 108,
-	"endColumn": 59
-},{
-	"resource": "/C:/learn/flutter/flutter_application_2_test_ui/lib/services/notification_service.dart",
-	"owner": "_generated_diagnostic_collection_name_#2",
-	"code": {
-		"value": "undefined_method",
-		"target": {
-			"$mid": 1,
-			"path": "/diagnostics/undefined_method",
-			"scheme": "https",
-			"authority": "dart.dev"
-		}
-	},
-	"severity": 8,
-	"message": "The method 'requestPermission' isn't defined for the type 'AndroidFlutterLocalNotificationsPlugin'.\nTry correcting the name to the name of an existing method, or defining a method named 'requestPermission'.",
-	"source": "dart",
-	"startLineNumber": 122,
-	"startColumn": 52,
-	"endLineNumber": 122,
-	"endColumn": 69
+	"startLineNumber": 41,
+	"startColumn": 33,
+	"endLineNumber": 41,
+	"endColumn": 52
 }]

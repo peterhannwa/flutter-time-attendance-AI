@@ -53,6 +53,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     try {
       final attendance = Attendance(
         employeeId: _authService.currentUser!.id,
+        employeeName: _authService.currentUser!.name,
         date: DateTime.now(),
         status: status,
         checkIn: status == AttendanceStatus.present ? DateTime.now() : null,

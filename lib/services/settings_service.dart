@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsService extends ChangeNotifier {
+  static final SettingsService _instance = SettingsService._internal();
+  factory SettingsService() => _instance;
+  SettingsService._internal();
+
   static const String _darkModeKey = 'dark_mode';
   static const String _useBiometricsKey = 'use_biometrics';
   static const String _notificationsEnabledKey = 'notifications_enabled';
@@ -9,7 +13,11 @@ class SettingsService extends ChangeNotifier {
 
   late SharedPreferences _prefs;
 
-  Future<void> initialize() async {
+  SettingsService() {
+    _initialize();
+  }
+
+  Future<void> _initialize() async {
     _prefs = await SharedPreferences.getInstance();
   }
 

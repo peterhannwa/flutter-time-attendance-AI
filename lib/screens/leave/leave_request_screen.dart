@@ -81,9 +81,15 @@ class _LeaveRequestScreenState extends State<LeaveRequestScreen> {
     setState(() => _isLoading = true);
     try {
       final manager = await _employeeService.getEmployeeById(widget.employeeId);
+      final employee = await _employeeService.getEmployeeById(widget.employeeId);
       
+      if (employee == null) {
+        throw Exception('Employee not found');
+      }
+
       final request = LeaveRequest(
         employeeId: widget.employeeId,
+        employeeName: employee.name,
         type: _selectedType,
         startDate: _startDate,
         endDate: _endDate,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../services/settings_service.dart';
+import '../../services/notification_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -9,6 +11,7 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  late SettingsService _settingsService;
   bool _isDarkMode = false;
   bool _isBiometricsEnabled = false;
   bool _areNotificationsEnabled = true;
@@ -26,15 +29,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   void initState() {
     super.initState();
+    _settingsService = context.read<SettingsService>();
     _loadSettings();
   }
 
-  Future<void> _loadSettings() async {
-    final settings = SettingsService();
-    _isDarkMode = await settings.isDarkMode();
-    _isBiometricsEnabled = await settings.isBiometricsEnabled();
-    _areNotificationsEnabled = await settings.areNotificationsEnabled();
-    setState(() {});
+  void _loadSettings() {
+    setState(() {
+      _isDarkMode = _settingsService.isDarkMode;
+      _isBiometricsEnabled = _settingsService.useBiometrics;
+      _areNotificationsEnabled = _settingsService.notificationsEnabled;
+    });
+  }
+
+  Future<void> _requestNotificationPermission() async {
+    final notificationService = NotificationService();
+    await notificationService.requestPermissions();
+    await _settingsService.setNotificationsEnabled(true);
+    setState(() {
+      _areNotificationsEnabled = true;
+    });
   }
 
   @override
@@ -71,7 +84,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             subtitle: const Text('Enable dark theme'),
             value: _isDarkMode,
             onChanged: (bool value) async {
-              await SettingsService().setDarkMode(value);
+              await _settingsService.setDarkMode(value);
               setState(() {
                 _isDarkMode = value;
               });
@@ -105,7 +118,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             subtitle: const Text('Use fingerprint or face ID'),
             value: _isBiometricsEnabled,
             onChanged: (bool value) async {
-              await SettingsService().setBiometricsEnabled(value);
+              await _settingsService.setUseBiometrics(value);
               setState(() {
                 _isBiometricsEnabled = value;
               });
@@ -138,7 +151,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
             subtitle: const Text('Enable push notifications'),
             value: _areNotificationsEnabled,
             onChanged: (bool value) async {
-              await SettingsService().setNotificationsEnabled(value);
+              if (value) {
+                await _requestNotificationPermission();
+              } else {
+                await _settingsService.setNotificationsEnabled(value);
+              }
               setState(() {
                 _areNotificationsEnabled = value;
               });

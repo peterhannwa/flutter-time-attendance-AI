@@ -20,6 +20,7 @@ enum LeaveStatus {
 class LeaveRequest {
   final String id;
   final String employeeId;
+  final String employeeName;
   final LeaveType type;
   final DateTime startDate;
   final DateTime endDate;
@@ -33,6 +34,7 @@ class LeaveRequest {
   LeaveRequest({
     String? id,
     required this.employeeId,
+    required this.employeeName,
     required this.type,
     required this.startDate,
     required this.endDate,
@@ -57,6 +59,7 @@ class LeaveRequest {
   LeaveRequest copyWith({
     String? id,
     String? employeeId,
+    String? employeeName,
     LeaveType? type,
     DateTime? startDate,
     DateTime? endDate,
@@ -70,6 +73,7 @@ class LeaveRequest {
     return LeaveRequest(
       id: id ?? this.id,
       employeeId: employeeId ?? this.employeeId,
+      employeeName: employeeName ?? this.employeeName,
       type: type ?? this.type,
       startDate: startDate ?? this.startDate,
       endDate: endDate ?? this.endDate,
@@ -86,6 +90,7 @@ class LeaveRequest {
     return {
       'id': id,
       'employeeId': employeeId,
+      'employeeName': employeeName,
       'type': type.toString(),
       'startDate': startDate.toIso8601String(),
       'endDate': endDate.toIso8601String(),
@@ -102,6 +107,7 @@ class LeaveRequest {
     return LeaveRequest(
       id: json['id'],
       employeeId: json['employeeId'],
+      employeeName: json['employeeName'],
       type: LeaveType.values.firstWhere(
         (e) => e.toString() == json['type'],
       ),

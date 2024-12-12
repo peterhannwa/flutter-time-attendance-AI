@@ -281,7 +281,7 @@ class _ReportsScreenState extends State<ReportsScreen> with SingleTickerProvider
           margin: const EdgeInsets.only(bottom: 8),
           child: ListTile(
             title: Text(leave.employeeName),
-            subtitle: Text('${leave.type} | ${leave.duration} days'),
+            subtitle: Text('${leave.type} | ${leave.durationInDays} days'),
             trailing: Chip(
               label: Text(
                 leave.status.toString().split('.').last,

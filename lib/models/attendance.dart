@@ -13,6 +13,7 @@ enum AttendanceStatus {
 class Attendance {
   final String id;
   final String employeeId;
+  final String employeeName;
   final DateTime date;
   final DateTime? checkIn;
   final DateTime? checkOut;
@@ -27,6 +28,7 @@ class Attendance {
   Attendance({
     String? id,
     required this.employeeId,
+    required this.employeeName,
     required this.date,
     this.checkIn,
     this.checkOut,
@@ -68,9 +70,12 @@ class Attendance {
     return checkOut!.isBefore(expectedCheckOut);
   }
 
+  bool get isPresent => status == AttendanceStatus.present;
+
   Attendance copyWith({
     String? id,
     String? employeeId,
+    String? employeeName,
     DateTime? date,
     DateTime? checkIn,
     DateTime? checkOut,
@@ -85,6 +90,7 @@ class Attendance {
     return Attendance(
       id: id ?? this.id,
       employeeId: employeeId ?? this.employeeId,
+      employeeName: employeeName ?? this.employeeName,
       date: date ?? this.date,
       checkIn: checkIn ?? this.checkIn,
       checkOut: checkOut ?? this.checkOut,
@@ -102,6 +108,7 @@ class Attendance {
     return {
       'id': id,
       'employeeId': employeeId,
+      'employeeName': employeeName,
       'date': date.toIso8601String(),
       'checkIn': checkIn?.toIso8601String(),
       'checkOut': checkOut?.toIso8601String(),
@@ -119,6 +126,7 @@ class Attendance {
     return Attendance(
       id: json['id'],
       employeeId: json['employeeId'],
+      employeeName: json['employeeName'],
       date: DateTime.parse(json['date']),
       checkIn: json['checkIn'] != null ? DateTime.parse(json['checkIn']) : null,
       checkOut: json['checkOut'] != null ? DateTime.parse(json['checkOut']) : null,
